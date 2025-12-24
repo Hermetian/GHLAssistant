@@ -15,3 +15,8 @@ dist/
 
 # OS
 .DS_Store
+
+# Browser data (contains cookies, tokens, sensitive info)
+data/browser_profiles/
+data/network_logs/
+data/screenshots/
