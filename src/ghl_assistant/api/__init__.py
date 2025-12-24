@@ -1,5 +1,37 @@
-"""GHL API client and utilities."""
+"""GHL API client module.
 
-from .client import GHLClient
+Usage:
+    from ghl_assistant.api import GHLClient
 
-__all__ = ["GHLClient"]
+    async with GHLClient.from_session() as ghl:
+        # Contacts
+        contacts = await ghl.contacts.list()
+        contact = await ghl.contacts.create(first_name="John", email="j@example.com")
+
+        # Workflows
+        workflows = await ghl.workflows.list()
+
+        # Calendars
+        calendars = await ghl.calendars.list()
+
+        # And more...
+"""
+
+from .client import GHLClient, GHLConfig
+from .contacts import ContactsAPI
+from .workflows import WorkflowsAPI
+from .calendars import CalendarsAPI
+from .forms import FormsAPI
+from .opportunities import OpportunitiesAPI
+from .conversations import ConversationsAPI
+
+__all__ = [
+    "GHLClient",
+    "GHLConfig",
+    "ContactsAPI",
+    "WorkflowsAPI",
+    "CalendarsAPI",
+    "FormsAPI",
+    "OpportunitiesAPI",
+    "ConversationsAPI",
+]
